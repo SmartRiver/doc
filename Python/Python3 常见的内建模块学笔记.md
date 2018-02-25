@@ -3,7 +3,7 @@ author: xiaohe
 date: 2018/2/25
 ---
 
-> # datetime
+>## datetime
 
 [代码参考](https://github.com/michaelliao/learn-python3/blob/master/samples/commonlib/use_datetime.py)
 
@@ -14,7 +14,7 @@ date: 2018/2/25
     timedelta
 ```
 
-> # collections
+> ## collections
 
 [代码参考](https://github.com/michaelliao/learn-python3/blob/master/samples/commonlib/use_collections.py)
 
@@ -49,33 +49,31 @@ date: 2018/2/25
     Counter是一个简单的计数器，例如，统计字符出现的个数.
 ```
 
-># base64
+>## base64
 
 [代码参考](https://github.com/michaelliao/learn-python3/blob/master/samples/commonlib/do_base64.py)
 ```
     Base64是一种任意二进制到文本字符串的编码方法，常用于在URL、Cookie、网页中传输少量二进制数据。
 ```
 
-># struct
+>## struct
 
-```
-```
+>## hashlib
+[代码参考](https://github.com/michaelliao/learn-python3/blob/master/samples/commonlib/use_hashlib.py)
 
-># hashlib
-```
-```
+>## hmac
 
-># hmac
+>## itertools
 
-># itertools
+>## urllib
+[代码参考](https://github.com/michaelliao/learn-python3/blob/master/samples/commonlib/use_urllib.py)
 
-># contextlib
+>## contextlib
+[代码参考](https://github.com/michaelliao/learn-python3/blob/master/samples/commonlib/use_itertools.py)
 
-># urllib
+>## XML
 
-># XML
-
-># HTMLParser
+>## HTMLParser
 
 
 
