@@ -1,4 +1,9 @@
-# MYSQL UBUNTU中的安装配置
+---
+author: xiaohe
+date: 2018/2/25
+---
+
+# MYSQL Ubuntu中的安装配置
 
 
 >## 下载与安装
@@ -52,4 +57,9 @@
   telnet remote_server_ip 3306
   #remote_server_ip指你的安装mysql的主机地址
   如果连接不成功，则去服务器检查防火墙、安全策略，比如阿里云服务器看看安全组策略是否开启3306端口
+```
+
+### 参考资料
+```
+unbuntu mysql安装：http://blog.csdn.net/wuzuodingfeng/article/details/54638999
 ```
