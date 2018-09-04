@@ -59,6 +59,29 @@ date: 2018/2/25
   如果连接不成功，则去服务器检查防火墙、安全策略，比如阿里云服务器看看安全组策略是否开启3306端口
 ```
 
+## 常见问题
+
+1、找不到mysqld.sock
+
+```
+Q: 	Can't connect to lcoal MYSQL server though sock '/var/run/mysqld/mysqld.sock
+R: 	MySQL下mysql.sock丢失丢失的原因一般是因为配置文件不一致的原因，mysqld 错误启动，mysqld_safe 会	清除一次mysql.sock 。
+A: 
+	1、如果是.sock文件存在但是指向不对，在root权限下修改my.cnf文件（/etc/mysql/my.cnf），指定正确		的路径；
+	2、如果是.scok文件不存在
+    判断一般人解决故障时没有切换到mysql用户，造成权限有问题，无法创建mysql授权表，所以也就无法创			建/tmp/mysql.sock 和hostname.pid文件。因此，总结解决方法如下：
+	//root 用户也是可以的
+    #su mysql
+    //到bin目录执行，重建授权表
+    $/usr/local/bin/mysql_install_db
+    $/usr/local/bin/mysqld_safe &
+    //测试
+    mysql -uroot -p
+    mysq>bye;
+
+    文件已经解决，重新生成新的 /tmp/mysql.sock 和 hostname.pid
+
+```
 ### 参考资料
 ```
 unbuntu mysql安装：http://blog.csdn.net/wuzuodingfeng/article/details/54638999
