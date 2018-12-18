@@ -69,7 +69,7 @@ date: 2018/2/25
 [代码参考](https://github.com/michaelliao/learn-python3/blob/master/samples/commonlib/use_urllib.py)
 
 >## contextlib
-[代码参考](https://github.com/michaelliao/learn-python3/blob/master/samples/commonlib/use_itertools.py)
+[代码参考](https://github.com/michaelliao/learn-python3/blob/master/samples/commonlib/use_contextlib.py)
 
 >## XML
 

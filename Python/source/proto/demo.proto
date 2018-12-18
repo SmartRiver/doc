@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package proto;
+
+message SearchRequest {
+    string query = 1;
+    int32 page_no = 2;
+    int32 nums = 3;
+}
