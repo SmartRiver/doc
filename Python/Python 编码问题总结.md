@@ -1,3 +1,5 @@
+# Python编码问题总结
+
 当我还是编程小白的时候，编码问题一直困扰了我很久，一碰到编码异常报错，就各种百度谷歌，一个个试别人的方法直到解决问题，Python因为Python2, Python3在编码处理不完全一样，导致在python处理编码问题是更是错误频发，网上的博客又是良莠不齐，费时费力还不一定解决自己的问题，终于我受不了了，花了时间集中学习了python编码的知识，基本囊括了常见的编码问题，并总结如下，希望对你有所帮助。
 
 [TOC]
@@ -12,7 +14,7 @@
 
 字符（character）是各种文字和符号的总称，包括各个国家的文字、标点符号、图形符号、数字等。字符集是（character set）是多个字符的集合，字符集有很多种，比如我们常见的ascii、unicode、GBK、GBK2312, BIG5字符集等，不同的字符集包含的字符的种类和个数都不一样。
 
-###  编码规范
+### 编码规范
 
 上面我们说的ascill、gbk字符集其实是编码规范的一个子概念，为了表示让计算机显示字符，各个国家、国际组织定义了自己的编码规范，将不同的字符映射到不同的二进制数，例如GBK编码规范就定义了中文字符跟二进制数的映射关系，这样采用GBK编码规范，我们的计算机就可以显示中文。
 
@@ -83,30 +85,29 @@ UTF-32采用4个字节来表示所有的Unicode字符。
 
 **GB2312**：通常采用EUC储存方法，以便兼容于ASCII。每个汉字及符号以两个字节来表示。
 
-**GBK**：GBK是采用单双字节变长编码，英文使用单字节编码，完全兼容ASCII字符编码，中文部分采用双字节		编码。
+**GBK**：GBK是采用单双字节变长编码，英文使用单字节编码，完全兼容ASCII字符编码，中文部分采用双字节编码。
 
 **GB18030** ：GB18030包含三种长度的编码：单字节的ASCII、双字节的GBK（略带扩展）、以及用于填补所有Unicode码位的四字节UTF区块。
 
 **总结**：由于这三种编码规范只有唯一的编码方式，所以有时候我们又说GBK字符集（CharacterSet=GBK），又有GBK编码（Encoding=GBK）。
 
-​		
+​
 
-
-##  二、Python2跟Python3的编码处理区别
+## 二、Python2跟Python3的编码处理区别
 
 ### 文件编码方式
 
 首先，我们要知道，python程序运行时，是解释器将.py文件读取写入内存，写入的时候就需要指定编码方式，在Python2中，默认的编码式Ascii，而在Python3中则是Utf-8, 我们经常在文件第一行或者第二行看到类似#coding:utf-8`或`＃-*-coding:utf-8-*-的定义，其实这就是指定了文件编码方式，当然你也可以指定gbk。使用sys.getdefaultencoding()可以查看默认的编码方式。
 
 ```python
-Python 3.7.4 (default, Aug 13 2019, 15:17:50) 
->>> 
+Python 3.7.4 (default, Aug 13 2019, 15:17:50)
+>>>
 >>> import sys
 >>> print(sys.getdefaultencoding())
 utf-8
->>> 
+>>>
 
-Python 2.7.17 |Anaconda, Inc.| (default, Oct 21 2019, 14:10:59) 
+Python 2.7.17 |Anaconda, Inc.| (default, Oct 21 2019, 14:10:59)
 >>> import sys
 >>> print(sys.getdefaultencoding())
 ascii
@@ -115,7 +116,7 @@ ascii
 >>> sys.setdefaultencoding('utf8') # 更改默认的编码
 >>> print(sys.getdefaultencoding())
 utf8
->>> 
+>>>
 ```
 
 ### Str 、Unicode、Bytes区别
@@ -125,8 +126,6 @@ utf8
 ![unicode_bytes_convert](/Users/johnson/Pictures/unicode_bytes_convert.jpg)
 
 在Python3中，所有的字符串类型都是Unicode类型，所以从字符串到字节流bytes需要encode，从bytes字节流到字符串需要decode，Bytes不能encode，Unicode不能decode。
-
-
 
 ## 三、常见的编码错误&解决
 
@@ -144,21 +143,13 @@ answer: py文件没有指定编码方式，代码中出现默认编码方式（A
 5.cp936， CP936其实就是GBK，IBM在发明Code Page的时候将GBK放在第936页，所以叫CP936
 ```
 
-
-
 > 参考资料
 
 1. https://realpython.com/python-encodings-guide/
 2. https://blog.csdn.net/qq_42068856/article/details/83792174
-
-
 
 转载请标明来源
 
 如果文章对你有所把帮助，请帮忙点赞，有任何疑问和建议，可以在下面评论留言。
 
 祝生活愉快！
-
-   
-
-   
